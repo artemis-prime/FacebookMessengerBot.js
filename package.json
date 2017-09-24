@@ -2,8 +2,8 @@
   "name": "facebook-messenger-bot",
   "version": "0.2.1",
   "description": "Simple, light-weight Facebook Messenger Bot API for Node/ES6",
-  "main": "dist/facebook-messenger-bot.js",
-  "module": "dist/facebook-messenger-bot.mjs",
+  "main": "lib/facebook-messenger-bot.js",
+  "module": "lib/facebook-messenger-bot.mjs",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
@@ -12,11 +12,7 @@
   },
   "scripts": {
     "build": "sake build",
-    "prepublishOnly": "sake build",
-    "pretest": "sake build",
-    "eslint": "node ./node_modules/eslint/bin/eslint.js --config ./.eslintrc.json",
-    "test": "set -e; node ./node_modules/mocha/bin/mocha ./dist/tests/*-test.js; npm run lint",
-    "lint": "set -e; npm run eslint --no-color --quiet --ext js,.es6,.jsx ./"
+    "prepublishOnly": "sake build"
   },
   "repository": {
     "type": "git",
@@ -29,15 +25,6 @@
   },
   "homepage": "https://github.com/bluejamesbond/FacebookMessengerBot.js#readme",
   "devDependencies": {
-    "babel-eslint": "^8.0.0",
-    "eslint": "^4.7.2",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-babel": "^4.1.2",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-mocha": "^4.11.0",
-    "eslint-plugin-react": "^7.3.0",
-    "mocha": "3.5.3",
     "sake-bundle": "^0.6.1",
     "sake-cli": "^0.5.21",
     "sake-outdated": "^0.1.28",

@@ -10,11 +10,3 @@ task('clean', 'clean project', ()=> {
 task('build', 'build project', ()=> {
   bundle.write({entry: 'src/index.js'})
 })
-
-task('lint', 'lint project', ()=> {
-  exec('eslint --config ./.eslintrc.json --no-color --quiet --ext js,.es6,.jsx ./')
-})
-
-task('test', 'test project', ()=> {
-  exec('mocha ./dist/tests/*-test.js; npm run lint')
-})
