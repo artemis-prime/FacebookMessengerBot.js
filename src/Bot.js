@@ -16,13 +16,12 @@ export async function wait(time) {
 }
 
 class Bot extends EventEmitter {
-  static Buttons = Buttons;
-  static Elements = Elements;
-
-  static wait = wait;
-
   constructor(token, verification, debug = false) {
     super();
+
+    this.Buttons  = Buttons;
+    this.Elements = Elements;
+    this.wait     = wait;
 
     this._token = token;
     this._debug = debug;
@@ -300,7 +299,7 @@ class Bot extends EventEmitter {
 
     if (attachments.location) {
       const location = attachments.location[0];
-      message.location = {...location, ...location.payload.coordinates};
+      message.location = Object.assign(location, location.payload.coordinates);
       delete message.location.payload;
     }
 

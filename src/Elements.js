@@ -88,7 +88,7 @@ class Elements {
           element.text = e.text;
           if (e.image) element.image_url = e.image;
           element.buttons = e.buttons.toJSON();
-          return {attachment: {type: 'template', payload: {template_type: 'button', ...element}}};
+          return {attachment: {type: 'template', payload: Object.assign({}, {template_type: 'button'}, element)}};
         } else if (e.text) {
           return {text: e.text};
         } else if (e.image) {
