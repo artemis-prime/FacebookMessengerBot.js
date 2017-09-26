@@ -11,7 +11,7 @@ export {Elements, Buttons, QuickReplies};
 
 const userCache = {};
 
-export async function wait(time) {
+async function wait(time) {
   return new Promise(resolve => setTimeout(() => resolve(), time));
 }
 
@@ -332,6 +332,6 @@ class Bot extends EventEmitter {
   }
 }
 
-export {Bot};
+export {Bot, wait};
 
 export default Bot;

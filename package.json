@@ -1,6 +1,6 @@
 {
   "name": "@artemis-prime/facebook-messenger-bot",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Simple, light-weight Facebook Messenger Bot API for Node/ES6",
   "main": "lib/facebook-messenger-bot.js",
   "module": "lib/facebook-messenger-bot.mjs",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluejamesbond/FacebookMessengerBot.js.git"
+	"url": "git@github.com:artemis-prime/facebook-messenger-bot.git"
   },
   "author": "Mathew Kurian",
   "license": "ISC",
