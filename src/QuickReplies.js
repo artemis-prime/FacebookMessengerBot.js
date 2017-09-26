@@ -5,12 +5,12 @@ class QuickReplies {
     this._quickReplies = [];
   }
 
-  add({text, data, event, isLocation}) {
+  add({text, data, event, isLocation, image}) {
     if (!data && !event && !isLocation) {
       throw Error('Must provide a url or data i.e. {data: null} or {url: \'https://facebook.com\'}');
     }
 
-    this._quickReplies.push({text: text || 'QuickReply', event, data, isLocation});
+    this._quickReplies.push({text: text || 'QuickReply', event, data, isLocation, image});
     return this;
   }
 
@@ -26,7 +26,16 @@ class QuickReplies {
         contentType = 'location';
       }
 
-      quickReplies.push({payload, title: cut(String(reply.text), 20), content_type: contentType});
+	  let toPush = {
+		  payload,
+		  title: cut(String(reply.text), 20),
+		  content_type: contentType
+	  };
+	  if (reply.image) {
+		  toPush.image_url = reply.image
+	  }
+
+      quickReplies.push(toPush);
     }
 
     return quickReplies;

@@ -1,6 +1,6 @@
 {
   "name": "@artemis-prime/facebook-messenger-bot",
-  "version": "0.2.1",
+  "version": "1.0.2",
   "description": "Simple, light-weight Facebook Messenger Bot API for Node/ES6",
   "main": "lib/facebook-messenger-bot.js",
   "module": "lib/facebook-messenger-bot.mjs",
