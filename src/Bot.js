@@ -7,7 +7,7 @@ import QuickReplies from './QuickReplies.js';
 import fetch from './libs/fetch.js';
 import _ from 'lodash';
 
-export {Elements, Buttons, QuickReplies};
+//export {Elements, Buttons, QuickReplies};
 
 const userCache = {};
 
@@ -331,7 +331,5 @@ class Bot extends EventEmitter {
     return router;
   }
 }
-
-export {Bot, wait};
 
 export default Bot;
