@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-	"url": "git@github.com:artemis-prime/facebook-messenger-bot.git"
+    "url": "git@github.com:artemis-prime/facebook-messenger-bot.git"
   },
   "author": "Mathew Kurian",
   "license": "ISC",
@@ -26,7 +26,6 @@
   "homepage": "https://github.com/bluejamesbond/FacebookMessengerBot.js#readme",
   "devDependencies": {
     "sake-bundle": "^0.6.1",
-    "sake-cli": "^0.5.21",
     "sake-outdated": "^0.1.28",
     "sake-publish": "^0.1.16",
     "sake-version": "^0.1.19"

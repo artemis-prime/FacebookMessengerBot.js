@@ -24,7 +24,7 @@ class Elements {
                     throw Error('Unable to parse buttons');
                 }
             }
-        }
+        } 
 
         this._elements.push({
             text,

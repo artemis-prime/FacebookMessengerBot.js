@@ -84,14 +84,12 @@ class Bot extends EventEmitter {
       return result;
     }
 
-    const {body: {result}} = await fetch('https://graph.facebook.com/v2.6/me/thread_settings', {
+    const {body: {result}} = await fetch('https://graph.facebook.com/v2.6/me/messenger_profile', {
       method: 'post',
       json: true,
       query: {access_token: this._token},
       body: {
-        setting_type: 'call_to_actions',
-        thread_state: 'existing_thread',
-        call_to_actions: input
+        persistent_menu: input, 
       }
     });
 
@@ -209,23 +207,27 @@ class Bot extends EventEmitter {
 
     // POSTBACK
     if (message.postback) {
-      let postback = {};
+      let payload = {};
+      let referral = {};
 
       try {
-        postback = JSON.parse(message.postback.payload);
+        payload = JSON.parse(message.postback.payload);
+        referral = JSON.parse(JSON.stringify(message.postback.referral));
       } catch (e) {
-        // ignore
+        // console.error(e);
       }
+      console.log("PAYLOAD: " + JSON.stringify(message.postback, null, 2));
       message.isButton = true;
 
-      if (postback.hasOwnProperty('data')) {
-        message.postback = postback;
-        message.data = postback.data;
-        message.event = postback.event;
+      if (payload.hasOwnProperty('data')) {
+        message.postback = payload;
+        message.data = payload.data;
+        message.event = payload.event;
+        message.referral = referral;
 
         this.emit('postback', message.event, message, message.data);
 
-        if (postback.hasOwnProperty('event')) {
+        if (payload.hasOwnProperty('event')) {
           this.emit(message.event, message, message.data);
         }
       } else {
