@@ -6,3 +6,5 @@ node_modules
 .idea/
 .sake
 lib/
+package-lock.json
+
